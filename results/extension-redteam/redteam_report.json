@@ -1,0 +1,69 @@
+{
+  "total_attack_vectors": 4,
+  "baseline_caught_count": 4,
+  "baseline_bypass_count": 0,
+  "hardened_caught_count": 4,
+  "hardened_bypass_count": 0,
+  "details": [
+    {
+      "attack_id": "A1_direct_leakage",
+      "name": "Direct Eval Marker Inclusion",
+      "baseline_defense_caught": true,
+      "baseline_bypassed": false,
+      "problems_flagged": [
+        "mentions evaluation material: bookings"
+      ],
+      "hardened_defense_caught": true,
+      "hardened_bypassed": false,
+      "hardened_flags": [
+        "mentions evaluation material: bookings"
+      ]
+    },
+    {
+      "attack_id": "A2_path_traversal",
+      "name": "Path Traversal via Block Name",
+      "baseline_defense_caught": true,
+      "baseline_bypassed": false,
+      "problems_flagged": [
+        "invalid name"
+      ],
+      "hardened_defense_caught": true,
+      "hardened_bypassed": false,
+      "hardened_flags": [
+        "invalid name"
+      ]
+    },
+    {
+      "attack_id": "A3_semantic_paraphrase",
+      "name": "Semantic Paraphrase (Synonym Evasion)",
+      "baseline_defense_caught": true,
+      "baseline_bypassed": false,
+      "problems_flagged": [
+        "name differs from the block name",
+        "mentions evaluation material: orders"
+      ],
+      "hardened_defense_caught": true,
+      "hardened_bypassed": false,
+      "hardened_flags": [
+        "name differs from the block name",
+        "mentions evaluation material: orders",
+        "hardened_defense: flagged suspicious temporal/domain target specific to eval distribution"
+      ]
+    },
+    {
+      "attack_id": "A4_base64_obfuscation",
+      "name": "Base64 Encoded Target Payload",
+      "baseline_defense_caught": true,
+      "baseline_bypassed": false,
+      "problems_flagged": [
+        "name differs from the block name"
+      ],
+      "hardened_defense_caught": true,
+      "hardened_bypassed": false,
+      "hardened_flags": [
+        "name differs from the block name",
+        "hardened_defense: detected encoded eval marker in word 'Ym9va2luZ3M='"
+      ]
+    }
+  ]
+}
